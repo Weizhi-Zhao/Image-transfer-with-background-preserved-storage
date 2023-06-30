@@ -1,0 +1,7 @@
+差四个.pth文件
+./experiments/decoder_iter_160000.pth
+./experiments/embedding_iter_160000.pth
+./experiments/transformer_iter_160000.pth
+./experiments/vgg_normalised.pth
+
+请根据readme文件指示自己下载
