@@ -1,0 +1,2 @@
+在terminal中键入：
+python main.py --mode sample --num_domains 2 --src_dir ./test/test --ref_dir ./test/ref/ --resume_iter 100000
