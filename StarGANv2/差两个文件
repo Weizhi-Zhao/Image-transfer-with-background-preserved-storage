@@ -1,0 +1,5 @@
+差两个文件：
+./expr/checkpoints/100000_nets_ema.ckpt
+./expr/checkpoints/wing.ckpt
+
+请根据readme文件指示自己下载
