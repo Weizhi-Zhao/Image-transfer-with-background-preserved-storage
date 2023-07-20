@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="icon" type="image/x-icon" href="images/output_icon.ico">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<style type="text/css">
+			#tab td:first-child {
+				min-width: 200px;
+				text-align: center;
+				margin: 0 auto;
+				padding: 0;
+				
+  				font-family: '华文琥珀', 'Microsoft YaHei', Arial, sans-serif;
+
+				font-size: 40px;
+				color: rgb(242, 17, 103);
+			}
+
+			#tab td:nth-child(2) {
+				width: 400px;
+				padding: 0 ;
+				line-height: 40px;
+				margin: 0 auto;
+			}
+			#tab td:nth-child(5) {
+				margin: 0 auto;
+				padding: 0;
+				font-family:'Comic Sans MS', cursive;
+				font-size: 20px;
+				color: rgb(48, 12, 81);
+				
+			}
+			#tab td:nth-child(3) {
+				margin: 0 auto;
+				padding: 0;
+				font-family:'Comic Sans MS', cursive;
+				font-size: 20px;
+				color: rgb(238, 14, 100);
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				
+			}
+			#tab td:nth-child(5) {
+				margin: 0 auto;
+				padding: 0;
+				font-family:'Comic Sans MS', cursive;
+				font-size: 20px;
+				color: rgb(60, 24, 94);
+				
+			}
+
+			#tab1 td {
+				height: 40px;
+				line-height: 40px;
+				text-align: center;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="body">
+
+
+
+			<!--nav-->
+			<div class="nav">
+				<div class="main">
+					<ul>
+						<li>
+							<a href="https://spacex.com"><img src="images/logo.png" height=55px></a>
+						</li>
+						<li>
+							<a href="index.html" >背景保持</a>
+						</li>
+						<li>
+							<a href="002.html" class="active">全图渲染</a>
+						</li>
+						<li>
+							<a href="https://github.com/ZhaoWeizhi/Image-transfer-with-background-preserved-storage" >Github</a>
+						</li>
+				
+					</ul>
+				</div>
+			</div>
+
+
+
+			<!--nav-->
+			<!-- banner -->
+			<div class="main">
+			
+				<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" id="tab">
+					<tr>
+						
+						<td width="10%">效果图</td>
+					
+						<td style="text-align: center;" width="10%">
+							<div class="round">
+							<img src="images/me.jpg" width=400px>
+							</div>
+						</td>
+						<td colspan="2"    align="center" >
+							
+							<h1>Try it now！</h1>
+							
+							<form action="/upload" method="post" enctype="multipart/form-data"    align="center">
+								<input type="file" name="image_upload" accept="image/*" id="file_input" align="center">
+								<br>
+								<input type="submit" value="上传">
+							</form>
+							
+							
+						</td>
+					</tr>
+				</br></br>
+					<tr>
+						<div class="sub">
+						
+						<td>我是谁</td>
+						</div>
+						<td colspan="3">
+						<div class="a01">
+						哇哦~嘿嘿！你好你好你好！我就是那个超级神奇的可爱活泼的“背景保持能力的人物风格迁移”！让我用甜甜的语气来给你娓娓道来我的奇妙魔法吧！
+
+						首先，我会抠图！好像在进行一场“美术课上的宝藏狩猎”！这一步超级关键，确保我们在后面的操作中，能够精准地对人物进行换装！
+						
+						然后，让我说说我的第二项超酷本领——风格迁移！这就像是一场时尚秀一样，让你的人物瞬间换上各种华丽的新衣服！我会把人物的服饰、表情、甚至氛围都变得超有趣，让他们好像从未来穿越回来，或者从童话故事里走出来！是不是听起来很酷炫？
+						
+						
+						
+						来玩玩吧！
+					</div>
+
+
+
+						</td>
+					</tr>
+				</table>
+			</div>
+
+			<div class="foot">
+			</br></br>
+			<div class="foottext">
+				&copy; Copyright 版权所有 
+			</div>
+			</div>
+		</div>
+
+
+
+
+
+
+
+
+		<script>
+			// 获取文件选择框元素
+			const fileInput = document.getElementById('file_input');
+	
+			// 监听文件选择事件
+			fileInput.addEventListener('change', function() {
+				const selectedFile = fileInput.files[0];
+				if (selectedFile) {
+					console.log('已选择文件:', selectedFile.name);
+					// 在这里你可以根据需要进行文件处理
+					// 例如，你可以在这里读取图片数据、显示预览图像等等
+				}
+			});
+		</script>
+	</body>
+
+</html>
