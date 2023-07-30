@@ -1,0 +1,245 @@
+body {
+    background-image: url("images/bg5.jpg");
+    background-size: 100% auto; /* Adjust as needed, e.g., "contain", "100% auto", etc. */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: transparent;
+    
+}
+
+#container {
+    width: 80%;
+    max-width: 1000px;
+    margin: 0 auto;
+    height: 60vh; /* Reduce overall container height */
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+}
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Horizontally center the content */
+}
+
+#left-panel {
+    width: 200px;
+    padding: 20px;
+    background-color: rgba(123, 62, 141, 0.5);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.button {
+    display: block;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    background-color: #dee8cc;
+    color: #260214;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 20px;
+}
+
+.button:hover {
+    background-color: #b3b3b3;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+#right-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(173, 90, 188, 0.5);
+    border-radius: 20px;
+    margin-left: 20px;
+}
+
+#image-preview {
+    width: 100%;
+    max-width: 400px;
+    height: 180px; /* Reduce image preview height */
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    border: 2px dashed #ccc;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#image-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.upload-btn {
+    display: block;
+    margin-bottom: 10px;
+    border: none;
+    background-color: #ccc;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.upload-btn:hover {
+    background-color: #b3b3b3;
+}
+
+.confirm-btn {
+    padding: 10px;
+    border: none;
+    background-color: #2ecc71;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.confirm-btn:hover {
+    background-color: #27ae60;
+}
+
+/* Align the confirm button to the right of the file input */
+#right-panel input[type="file"] {
+    display: inline-block;
+    width: 70%;
+    margin-right: 10px;
+}
+
+#right-panel .confirm-btn {
+    display: inline-block;
+    width: 25%;
+}
+
+
+/* Original styles for the left and right panels (unchanged) */
+
+/* New styles for the effect image container */
+#effect-container {
+    width: 80%; /* Match the width of the upper container */
+    max-width: 1000px; /* Limit the max width if needed */
+    margin: 20px auto; /* Adjust the margin as needed */
+    display: flex;
+    justify-content: center;
+}
+
+#effect-image {
+    width: 100%;
+    max-width: 1000px; /* Adjust the max-width as needed */
+    height: 0;
+    padding-top: 33.75%; /* 16:9 aspect ratio (9 / 16 = 0.5625) */
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+#effect-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+
+
+#effect-container {
+    width: 80%;
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+#effect-image {
+    width: 100%;
+    max-width: 1000px;
+    height: 0;
+    padding-top: 33.75%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+#effect-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* New styles for the dropdown menus */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color:transparent;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+    background-color: #f1f1f1;
+    color: #000;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* 将 left-panel 容器中按钮的纵向间距调整为20px */
+#left-panel .button {
+    margin-bottom: 40px;
+}
+
+/* 将隐藏菜单紧贴按钮下边 */
+.dropdown {
+    position: relative; /* 设置父容器为相对定位 */
+}
+
+.dropdown-content {
+    /* 其他样式保持不变 */
+    position: absolute;
+    top: 100%; /* 紧贴按钮底部 */
+}

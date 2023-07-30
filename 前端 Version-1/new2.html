@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>图片上传和展示</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="container">
+        <div id="left-panel">
+            <ul>
+                <li class="dropdown">
+                    <button class="button">风格选择</button>
+                    <div class="dropdown-content">
+                        <a href="new2.html">油画</a>
+                        <a href="new2.html">二次元</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <button class="button">迁移方式</button>
+                    <div class="dropdown-content">
+                        <a href="new2.html">背景保持</a>
+                        <a href="new2.html">人物分割</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+
+                    <button class="button" buttom="https://github.com/ZhaoWeizhi/Image-transfer-with-background-preserved-storage">Github</button>
+                    
+                    
+                    <!-- <a href="https://github.com/ZhaoWeizhi/Image-transfer-with-background-preserved-storage" class="button">Github</a>   -->
+                    
+                  
+                </li>
+            </ul>
+        </div>
+        <div id="right-panel">
+            <div id="image-preview">
+                <img id="uploaded-image" src="images/pre.png" alt="上传的图片" />
+            </div>
+            <input type="file" id="upload-input" class="upload-btn" />
+            <button class="confirm-btn">确定</button>
+        </div>
+    </div>
+    <div id="effect-container">
+        <div id="effect-image">
+            <img src="images/me.jpg" alt="效果图" />
+        </div>
+    </div>
+
+    <script >
+                        // 图片预览功能
+                    const imagePreview = document.getElementById('image-preview');
+                    const uploadedImage = document.getElementById('uploaded-image');
+                    const uploadInput = document.getElementById('upload-input');
+
+                    uploadInput.addEventListener('change', function(event) {
+                        const file = event.target.files[0];
+                        const reader = new FileReader();
+
+                        reader.onload = function(e) {
+                            uploadedImage.src = e.target.result;
+                        }
+
+                        if (file) {
+                            reader.readAsDataURL(file);
+                        }
+
+                        imagePreview.style.display = file ? 'flex' : 'none';
+                    });
+
+
+
+
+
+                    // 修改下拉菜单的JavaScript代码
+                    const dropdowns = document.querySelectorAll('.dropdown');
+                    let hideTimer; // 声明一个计时器变量
+
+                    // 函数以显示下拉菜单
+                    function showDropdownContent(dropdownContent) {
+                        clearTimeout(hideTimer); // 清除隐藏计时器，以防止菜单在短时间内关闭
+                        dropdownContent.style.display = 'block';
+                    }
+
+                    // 函数以稍后隐藏下拉菜单
+                    function hideDropdownContent(dropdownContent) {
+                        hideTimer = setTimeout(function() {
+                            dropdownContent.style.display = 'none';
+                        }, 200); // 根据需要调整延迟时间（以毫秒为单位）
+                    }
+
+                    // 为每个下拉菜单添加事件监听器
+                    dropdowns.forEach(function(dropdown) {
+                        const button = dropdown.querySelector('.button');
+                        const dropdownContent = dropdown.querySelector('.dropdown-content');
+
+                        dropdown.addEventListener('mouseenter', function() {
+                            showDropdownContent(dropdownContent);
+                        });
+
+                        dropdown.addEventListener('mouseleave', function() {
+                            hideDropdownContent(dropdownContent);
+                        });
+
+                        dropdownContent.addEventListener('mouseenter', function() {
+                            showDropdownContent(dropdownContent);
+                        });
+
+                        // 新增对dropdownContent的mouseleave监听
+                        dropdownContent.addEventListener('mouseleave', function() {
+                            hideDropdownContent(dropdownContent);
+                        });
+                    });
+
+                    // 其余部分保持现有的JavaScript代码，用于图片预览功能
+
+
+
+
+
+
+
+
+
+                    // 获取隐藏菜单按钮和隐藏菜单内容
+                    const dropdownButton = document.querySelector('.dropdown .button');
+                    const dropdownContent = document.querySelector('.dropdown-content');
+
+                    // 添加隐藏菜单按钮点击事件监听器
+                    dropdownButton.addEventListener('click', function() {
+                        // 获取用户选择的内容
+                        const selectedStyle = dropdownContent.querySelector('.button.active').textContent;
+
+                        // 使用Ajax发送用户选择到后台进行记录
+                        sendSelectionToBackend(selectedStyle);
+                    });
+
+                    // 使用Ajax发送用户选择到后台进行记录的函数
+                    function sendSelectionToBackend(selectedStyle) {
+                        const xhr = new XMLHttpRequest();
+                        const url = '后台服务器URL'; // 替换为你的后台服务器URL
+                        const params = `selection=${encodeURIComponent(selectedStyle)}`;
+
+                        xhr.open('POST', url, true);
+                        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+                        xhr.onreadystatechange = function() {
+                            if (xhr.readyState === XMLHttpRequest.DONE) {
+                                if (xhr.status === 200) {
+                                    // 请求成功，后台记录完成
+                                    console.log('后台记录用户选择成功！');
+                                } else {
+                                    // 请求失败
+                                    console.log('后台记录用户选择失败！');
+                                }
+                            }
+                        };
+
+                        xhr.send(params);
+                    }
+
+
+    </script>
+</body>
+</html>
