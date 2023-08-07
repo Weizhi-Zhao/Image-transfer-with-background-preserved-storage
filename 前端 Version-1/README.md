@@ -90,7 +90,9 @@ function handleFileUpload(event) {
     <input type="file" id="upload-input" class="upload-btn" />
     <button class="confirm-btn">确定</button>
 
-    <script src="scripts.js"></script>
+    <script>
+    JavaScript部分
+    </script>
 </body>
 </html>
 ```
