@@ -4,7 +4,25 @@
 这个项目是一个简单的图片上传和展示网页应用，用户可以上传图片并在预览区显示，同时还可以在隐藏菜单中选择不同的风格和迁移方式。
 ### 2023/8/7 重要描述：1.JavaScript部分获取隐藏菜单选项函数未测试，可能有bug
 ###                   2.拉取隐藏菜单函数有点小问题，不过不影响使用。
-###                   3.选择图片后点击“确定”按钮后需要获取内容传到后端，函数未完成
+###                   3.选择图片后点击“确定”按钮后需要获取内容传到后端，可以将 -`handleFileUpload(event)` 函数进行如下修改：
+```
+// 处理图片文件上传事件
+function handleFileUpload(event) {
+    // 获取上传的图片文件
+    const file = event.target.files[0];
+
+    // 显示图片预览
+    showSelectedImage(file);
+
+    // 添加“确定”按钮点击事件监听器
+    const confirmButton = document.querySelector('.confirm-btn');
+    confirmButton.addEventListener('click', function() {
+        // 将图片文件传递到后端
+        uploadImageToBackend(file);
+    });
+}
+
+```
 
 ## 项目结构
 
