@@ -61,7 +61,7 @@ function handleFileUpload(event) {
 
 ## HTML 基本结构
 
-以下是 `index.html` 文件的基本结构：
+以下是 `new2.html` 文件的基本结构：
 
 ```html
 <!DOCTYPE html>
