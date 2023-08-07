@@ -29,7 +29,7 @@ function handleFileUpload(event) {
 - `new2.html`: 主要的 HTML 文件，包含用户界面和图片上传功能，注意：内嵌Javascript 部分，包含图片预览和隐藏菜单的交互逻辑。
 - `styles.css`: CSS 样式文件，用于页面布局和样式定义。
 
-。
+
 
 ## 如何使用
 
