@@ -1,13 +1,35 @@
 # 图片上传和展示项目
 
+
 这个项目是一个简单的图片上传和展示网页应用，用户可以上传图片并在预览区显示，同时还可以在隐藏菜单中选择不同的风格和迁移方式。
+### 2023/8/7 重要描述：1.JavaScript部分获取隐藏菜单选项函数未测试，可能有bug
+###                   2.拉取隐藏菜单函数有点小问题，不过不影响使用。
+###                   3.选择图片后点击“确定”按钮后需要获取内容传到后端，可以将 -`handleFileUpload(event)` 函数进行如下修改：
+```
+// 处理图片文件上传事件
+function handleFileUpload(event) {
+    // 获取上传的图片文件
+    const file = event.target.files[0];
+
+    // 显示图片预览
+    showSelectedImage(file);
+
+    // 添加“确定”按钮点击事件监听器
+    const confirmButton = document.querySelector('.confirm-btn');
+    confirmButton.addEventListener('click', function() {
+        // 将图片文件传递到后端
+        uploadImageToBackend(file);
+    });
+}
+
+```
 
 ## 项目结构
 
 - `new2.html`: 主要的 HTML 文件，包含用户界面和图片上传功能，注意：内嵌Javascript 部分，包含图片预览和隐藏菜单的交互逻辑。
 - `styles.css`: CSS 样式文件，用于页面布局和样式定义。
 
-。
+
 
 ## 如何使用
 
@@ -17,7 +39,7 @@
 
 ## JavaScript 函数
 
-在 `scripts.js` 文件中，以下是一些重要的 JavaScript 函数及其功能：
+
 
 在 `scripts.js` 文件中，以下是一些重要的 JavaScript 函数及其功能、输入参数和输出：
 
@@ -39,7 +61,7 @@
 
 ## HTML 基本结构
 
-以下是 `index.html` 文件的基本结构：
+以下是 `new2.html` 文件的基本结构：
 
 ```html
 <!DOCTYPE html>
@@ -68,7 +90,9 @@
     <input type="file" id="upload-input" class="upload-btn" />
     <button class="confirm-btn">确定</button>
 
-    <script src="scripts.js"></script>
+    <script>
+    JavaScript部分
+    </script>
 </body>
 </html>
 ```
